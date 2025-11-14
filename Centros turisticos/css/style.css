@@ -1,0 +1,224 @@
+/* ----------------------------------------------------- */
+/* 1. Base y Tipografía (Estilo Tropical) */
+/* ----------------------------------------------------- */
+:root {
+    /* Paleta de colores Tropical */
+    --color-fondo: #F5F5DC;      /* Beige/Crema Arena */
+    --color-selva: #008080;      /* Verde Selva/Turquesa Oscuro (Principal) */
+    --color-coral: #FF7F50;      /* Naranja Coral (Acento cálido) */
+    --color-mar: #00CED1;        /* Azul Turquesa Claro */
+    --color-texto-oscuro: #333333; /* Texto oscuro */
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Fuente con serif para una sensación relajada y elegante */
+    line-height: 1.8;
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-fondo);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    color: var(--color-selva); 
+    font-family: 'Arial Black', sans-serif; /* Títulos en fuente audaz */
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; margin-top: 2rem; border-bottom: 2px solid var(--color-coral); padding-bottom: 0.5rem;}
+h3 { font-size: 1.5rem; color: var(--color-coral); }
+
+p { margin-bottom: 1rem; color: var(--color-texto-oscuro); }
+
+
+/* Estilo de Enlaces */
+a {
+    color: var(--color-coral);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-selva); 
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------- */
+/* 2. Navegación (Header y Nav) */
+/* ----------------------------------------------------- */
+header {
+    background-color: var(--color-mar); /* Azul turquesa claro */
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-fondo); /* Texto blanco sobre turquesa */
+}
+
+header nav a {
+    margin-left: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-fondo);
+}
+
+header nav a.activo {
+    color: var(--color-coral); /* Pestaña activa en coral */
+    border-bottom: 3px solid var(--color-coral);
+    padding-bottom: 0.2rem;
+}
+
+
+/* ----------------------------------------------------- */
+/* 3. Hero Sections */
+/* ----------------------------------------------------- */
+.hero-europa, .hero-sudamerica {
+    height: 45vh; 
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+/* Placeholders de imágenes de fondo (DEBES AGREGAR ESTAS IMÁGENES) */
+.hero-europa { 
+    background-image: url('images/hero_europa_map.jpg'); 
+}
+.hero-sudamerica { 
+    background-image: url('images/hero_sudamerica_selva.jpg'); 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: var(--color-fondo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.intro p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: var(--color-fondo);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ----------------------------------------------------- */
+/* 4. Layouts y Contenido */
+/* ----------------------------------------------------- */
+.section-container {
+    padding: 3rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Cuadrícula de 3 Destinos */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Tarjetas (Estilo de cabaña playera) */
+.card {
+    background: #FFFFFF; /* Blanco limpio */
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 1.5rem;
+    transition: transform 0.3s;
+    border: 3px solid var(--color-mar); /* Borde de color de agua */
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.25);
+    border-color: var(--color-coral); /* Coral al pasar el ratón */
+}
+
+/* Espacios para Imágenes */
+.image-placeholder {
+    background-color: #E0E0E0;
+    min-height: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden; 
+    margin-top: 1rem;
+    border: 1px solid var(--color-selva);
+}
+
+.image-placeholder img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+
+/* ----------------------------------------------------- */
+/* 5. Footer */
+/* ----------------------------------------------------- */
+footer {
+    background-color: var(--color-selva); /* Verde Selva */
+    color: var(--color-fondo);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* ----------------------------------------------------- */
+/* 6. Responsividad Móvil */
+/* ----------------------------------------------------- */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+    }
+    header nav {
+        margin-top: 1rem;
+    }
+    header nav a {
+        margin: 0 0.8rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    .intro h2 { font-size: 2rem; }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
